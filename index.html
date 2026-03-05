@@ -1,12 +1,64 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BuildMart</title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/main.js" defer></script>
 </head>
 <body>
-  <h1>BuildMart</h1>
+  <header class="header">
+    <div class="header__body container">
+      <a
+        class="header__logo"
+        href="/"
+        aria-label="Home"
+        title="Home"
+      >
+        <div class="header-logo__mark">
+          <span class="header-logo__mark-text">BM</span>
+        </div>
+        <span class="header-logo__text">BuildMart</span>
+      </a>
+      <nav class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <a href="/" class="header__menu-link">Products</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="/" class="header__menu-link">Categories</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="/" class="header__menu-link">Deals</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="/" class="header__menu-link">About</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__search">
+        <svg class="search__icon" fill="none" stroke="#99A1AF" stroke-width="1.67">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            type="text"
+            class="search__input"
+            placeholder="Search products..."
+          >
+      </div>
+      <div class="header__cart">
+        <a href="/" class="cart">
+          <svg class="cart__icon" fill="none" stroke="#4A5565" stroke-width="1.67">
+          <circle cx="8" cy="21" r="1"></circle>
+          <circle cx="19" cy="21" r="1"></circle>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+        </svg>
+        <span class="cart__badge">1</span>
+        </a>
+      </div>
+    </div>
+  </header>
 </body>
 </html>
