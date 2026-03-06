@@ -120,3 +120,50 @@ body {
     
     box-sizing: border-box;
 }
+
+.footer {
+    background-color: #101828;
+    color: #D1D5DC;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    padding: 48px 32px;
+}
+
+.footer__top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.footer-top__header {
+    font-weight: 700;
+    font-size: 18px;
+
+    margin-bottom: 16px;
+}
+
+.footer-top__menu-link {
+    color: #D1D5DC;
+}
+
+.footer__contacts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 32px 0px 32px 0px;
+    
+    border-bottom: #1E2939 1px solid;
+}
+
+.footer__contact-header {
+    color: #FFFFFF;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.copyright {
+    justify-self: center;
+    margin-top: 32px;;
+}
