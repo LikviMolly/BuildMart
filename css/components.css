@@ -53,6 +53,7 @@ body {
     display: inline-flex;
     justify-content: space-between;
     column-gap: 32px;
+    
 }
 
 .header__menu-link {
@@ -142,10 +143,22 @@ body {
     font-size: 18px;
 
     margin-bottom: 16px;
+    
+
+}
+
+.footer-top__menu-list {
+   line-height: 2;
+
+
+
 }
 
 .footer-top__menu-link {
     color: #D1D5DC;
+   
+    
+    
 }
 
 .footer__contacts {
@@ -155,6 +168,7 @@ body {
     padding: 32px 0px 32px 0px;
     
     border-bottom: #1E2939 1px solid;
+    
 }
 
 .footer__contact-header {
@@ -162,6 +176,27 @@ body {
     font-weight: 600;
     margin-bottom: 4px;
 }
+
+
+.subscription_input{
+    margin-top: 8px;
+    width: 271px;
+    height: 38px;
+    align-items: center;
+    
+    border-radius: 10px;
+    border: #D1D5DC 1px solid;
+       
+    ::placeholder {
+        color: #E5E7EB;
+        font-weight: 400;
+        font-size: 14px;
+        outline: none;
+    }
+
+}
+
+
 
 .copyright {
     justify-self: center;
