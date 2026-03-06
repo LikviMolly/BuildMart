@@ -1,8 +1,15 @@
 body {
     font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
 }
 
 .container {
     width: 1216px;
-    justify-self: center;
+    margin: 0 auto;
 }
