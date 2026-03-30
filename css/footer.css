@@ -4,6 +4,7 @@
 
     font-size: 14px;
     font-weight: 400;
+    line-height: 1.7;
 
     padding: 48px 32px;
 }
@@ -15,6 +16,7 @@
 }
 
 .footer-top__header {
+    color: var(--color-white);
     font-weight: 700;
     font-size: 18px;
 
