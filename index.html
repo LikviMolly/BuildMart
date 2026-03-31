@@ -62,10 +62,33 @@
   </header>
   <main class="container">
     <div class="main__header">
-
+      <h1 class="main__title">Building Materials</h1>
+      <p class="main__subtitle">Premium construction supplies for all your projects</p>
     </div>
     <div class="main__filters-sort">
-
+      <button class="filters-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" x2="10" y1="20" y2="20"></line>
+          <line x1="14" x2="21" y1="20" y2="20"></line>
+          <line x1="3" x2="12" y1="12" y2="12"></line>
+          <line x1="16" x2="21" y1="12" y2="12"></line>
+          <line x1="3" x2="8" y1="4" y2="4"></line>
+          <line x1="12" x2="21" y1="4" y2="4"></line>
+          <line x1="10" x2="10" y1="18" y2="22"></line>
+          <line x1="16" x2="16" y1="10" y2="14"></line>
+          <line x1="8" x2="8" y1="2" y2="6"></line>
+        </svg>
+        Show Filters
+      </button>
+      <span class="products-count">Showing 6 products</span>
+      <div class="sort-control">
+        <label class="sort-control__label" for="sort-select">Sort by:</label>
+        <select class="sort-control__select" id="sort-select">
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="price-asc">Price (Low to High)</option>
+          <option value="price-desc">Price (High to Low)</option>
+        </select>
+      </div>
     </div>
     <div class="main__products">
 
