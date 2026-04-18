@@ -1,5 +1,11 @@
 :root {
-	/* Colors */
+	--color-primary: #ff5c00;
+	--color-primary-hover: #e65300;
+	--color-footer-bg: #0b1426;
+	--color-text-muted: #6b7280;
+	--color-cart-badge: #ef4444;
+
+
 	--color-red-600: oklch(57.7% .245 27.325);
 	--color-red-700: oklch(50.5% .213 27.518);
 	--color-orange-50: oklch(98% .016 73.684);
@@ -21,14 +27,14 @@
 	--color-black: #000;
 	--color-white: #fff;
 
-	/* Spacing & containers */
+
 	--spacing: 0.25rem;
 	--container-sm: 24rem;
 	--container-md: 28rem;
 	--container-lg: 32rem;
 	--container-7xl: 80rem;
 
-	/* Radius & motion */
+
 	--radius-xs: 0.125rem;
 	--ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 	--animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -37,4 +43,7 @@
 	--default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 	--color-border: var(--color-gray-200);
+
+	--color-orange-600: var(--color-primary);
+	--color-orange-700: var(--color-primary-hover);
 }
