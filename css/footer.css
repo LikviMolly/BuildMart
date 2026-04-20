@@ -1,0 +1,141 @@
+.footer {
+    background-color: var(--color-footer-bg);
+    color: var(--color-gray-300);
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    padding: 48px 32px;
+}
+
+.footer__top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.footer-top__header {
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 18px;
+
+    margin-bottom: 16px;
+    
+
+}
+
+.footer-top__menu-list {
+   line-height: 2;
+
+
+
+}
+
+.footer-top__menu-link {
+    color: var(--color-gray-300);
+   
+    
+    
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.footer-socials__link {
+    color: var(--color-gray-300);
+    transition: color 0.2s;
+}
+
+.footer-socials__link:hover {
+    color: var(--color-orange-600);
+}
+
+.footer-socials__link svg {
+    width: 20px;
+    height: 20px;
+}
+
+.footer__contacts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 32px;
+    padding: 32px 0 32px 0;
+    border-top: var(--color-gray-800) 1px solid;
+    border-bottom: var(--color-gray-800) 1px solid;
+    
+}
+
+.footer__contact-header {
+    color: var(--color-white);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+
+.subscription_form {
+    margin-top: 8px;
+    width: 271px;
+    height: 44px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.subscription-form__input {
+    flex: 1;
+    height: 44px;
+    padding: 0 16px;
+
+    background-color: var(--color-gray-800);
+    border: 1px solid var(--color-gray-700);
+    border-radius: 8px;
+
+    color: var(--color-white);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.subscription-form__input:focus {
+    border-color: var(--color-orange-600);
+}
+
+.subscription-form__input::placeholder {
+    color: var(--color-gray-400);
+}
+
+.subscription-form__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 48px;
+    height: 44px;
+
+    background-color: var(--color-orange-600);
+    color: var(--color-white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.subscription-form__btn:hover {
+    background-color: var(--color-orange-700);
+}
+
+.subscription-form__btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+.copyright {
+    justify-self: center;
+    margin-top: 32px;;
+}
