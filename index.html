@@ -60,7 +60,105 @@
       </div>
     </div>
   </header>
-  <main class="container"></main>
+  <main class="container">
+    <div class="main__header">
+      <h1 class="main__title">Building Materials</h1>
+      <p class="main__subtitle">Premium construction supplies for all your projects</p>
+    </div>
+    <div class="main__filters-sort">
+      <button
+        type="button"
+        class="filters-btn"
+        aria-expanded="false"
+        aria-controls="filters-panel"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" x2="10" y1="20" y2="20"></line>
+          <line x1="14" x2="21" y1="20" y2="20"></line>
+          <line x1="3" x2="12" y1="12" y2="12"></line>
+          <line x1="16" x2="21" y1="12" y2="12"></line>
+          <line x1="3" x2="8" y1="4" y2="4"></line>
+          <line x1="12" x2="21" y1="4" y2="4"></line>
+          <line x1="10" x2="10" y1="18" y2="22"></line>
+          <line x1="16" x2="16" y1="10" y2="14"></line>
+          <line x1="8" x2="8" y1="2" y2="6"></line>
+        </svg>
+        <span class="filters-btn__label">Show Filters</span>
+      </button>
+      <span class="products-count">Showing 6 products</span>
+      <div class="sort-control">
+        <label class="sort-control__label" for="sort-select">Sort by:</label>
+        <select class="sort-control__select" id="sort-select">
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="price-asc">Price (Low to High)</option>
+          <option value="price-desc">Price (High to Low)</option>
+        </select>
+      </div>
+    </div>
+    <div
+      id="filters-panel"
+      class="filters-panel"
+      role="region"
+      aria-label="Product filters"
+      hidden
+    >
+      <div class="filters-panel__grid">
+        <div class="filters-panel__col">
+          <h2 class="filters-panel__heading">Minimum Rating</h2>
+          <div class="filters-rating">
+            <label class="filters-rating__item">
+              <input type="checkbox" name="filter-rating" value="5" class="filters-rating__input">
+              <span>5+ Stars</span>
+            </label>
+            <label class="filters-rating__item">
+              <input type="checkbox" name="filter-rating" value="4" class="filters-rating__input">
+              <span>4+ Stars</span>
+            </label>
+            <label class="filters-rating__item">
+              <input type="checkbox" name="filter-rating" value="3" class="filters-rating__input">
+              <span>3+ Stars</span>
+            </label>
+          </div>
+        </div>
+        <div class="filters-panel__col filters-panel__col--price">
+          <h2 class="filters-panel__heading">Price Range</h2>
+          <div class="price-range" id="price-range">
+            <div class="price-range__rail" aria-hidden="true">
+              <span class="price-range__interval" id="price-range-interval"></span>
+            </div>
+            <input
+              type="range"
+              class="price-range__input price-range__input--min"
+              id="filter-price-min"
+              min="0"
+              max="400"
+              value="0"
+              step="1"
+              aria-label="Minimum price"
+            >
+            <input
+              type="range"
+              class="price-range__input price-range__input--max"
+              id="filter-price-max"
+              min="0"
+              max="400"
+              value="400"
+              step="1"
+              aria-label="Maximum price"
+            >
+          </div>
+          <div class="price-range__labels">
+            <span id="price-label-min">$0</span>
+            <span id="price-label-max">$400</span>
+          </div>
+          <div class="filters-panel__col-actions">
+            <button type="button" class="filters-clear" id="filters-clear">Clear All Filters</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main__products"></div>
+  </main>
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
