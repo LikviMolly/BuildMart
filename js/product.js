@@ -15,6 +15,63 @@
     return `$${Number(n).toFixed(2)}`;
   }
 
+  function specsGridHtml(items) {
+    if (!Array.isArray(items) || items.length === 0) return "";
+    return `<dl class="product-accordion__specs-grid">${items
+      .map(
+        (item) => `
+      <div class="product-accordion__spec-item">
+        <dt>${escapeHtml(item.label || "")}</dt>
+        <dd>${escapeHtml(item.value || "")}</dd>
+      </div>`,
+      )
+      .join("")}
+    </dl>`;
+  }
+
+  function renderProductAccordion(product) {
+    const root = document.getElementById("product-accordion");
+    if (!root) return;
+    const blocks = Array.isArray(product.accordion) ? product.accordion : [];
+    if (!blocks.length) {
+      root.innerHTML = "";
+      return;
+    }
+    root.innerHTML = blocks
+      .map((block, i) => {
+        const panelId = `product-accordion-panel-${i}`;
+        const buttonId = `product-accordion-trigger-${i}`;
+        const open = i === 0;
+        return `
+<div class="product-accordion__item${open ? " is-open" : ""}">
+  <h3 class="product-accordion__head">
+    <button type="button" class="product-accordion__trigger" id="${buttonId}" aria-controls="${panelId}" aria-expanded="${open ? "true" : "false"}">
+      <span>${escapeHtml(block.title || "Technical Specifications")}</span>
+      <span class="product-accordion__chev" aria-hidden="true">⌄</span>
+    </button>
+  </h3>
+  <div class="product-accordion__panel" id="${panelId}" role="region" aria-labelledby="${buttonId}" ${open ? "" : "hidden"}>
+    <div class="product-accordion__body">
+      ${specsGridHtml(block.items)}
+    </div>
+  </div>
+</div>`;
+      })
+      .join("");
+
+    root.addEventListener("click", (e) => {
+      const trigger = e.target.closest(".product-accordion__trigger");
+      if (!trigger || !root.contains(trigger)) return;
+      const item = trigger.closest(".product-accordion__item");
+      const panel = item?.querySelector(".product-accordion__panel");
+      if (!item || !panel) return;
+      const opened = item.classList.contains("is-open");
+      item.classList.toggle("is-open", !opened);
+      trigger.setAttribute("aria-expanded", opened ? "false" : "true");
+      panel.hidden = opened;
+    });
+  }
+
   function ratingStarsHtml(rating, prefix) {
     const r = Number(rating) || 0;
     let html = `<span class="${prefix}__stars" aria-hidden="true">`;
@@ -105,6 +162,7 @@
 
     const descEl = document.getElementById("product-description-text");
     if (descEl) descEl.textContent = product.description || "";
+    renderProductAccordion(product);
 
     let qty = 1;
     const qtyVal = document.getElementById("product-qty-value");
