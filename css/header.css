@@ -111,6 +111,138 @@
     stroke: var(--color-orange-600);
 }
 
+.header__icon-btn,
+.header__burger {
+    display: none;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #4a5565;
+}
+
+.header__icon-btn:hover,
+.header__burger:hover {
+    color: var(--color-orange-600);
+}
+
+.header__burger {
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header__burger-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: currentColor;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.header--drawer-open .header__burger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.header--drawer-open .header__burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.header--drawer-open .header__burger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+.header__drawer {
+    border-top: 1px solid #e5e7eb;
+    background-color: #fff;
+}
+
+.header__drawer-inner {
+    padding: 16px 0 20px;
+}
+
+.header__search--drawer {
+    width: 100%;
+    max-width: none;
+    height: 44px;
+}
+
+.header__drawer-nav {
+    margin-top: 8px;
+}
+
+.header__drawer-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__drawer-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.header__drawer-link {
+    display: block;
+    padding: 14px 0;
+    font-size: 16px;
+    font-weight: 400;
+    color: #364153;
+    text-decoration: none;
+}
+
+.header__drawer-menu li:last-child .header__drawer-link {
+    border-bottom: none;
+}
+
+.header__drawer-link:hover {
+    color: var(--color-orange-600);
+}
+
+@media (max-width: 900px) {
+    .header__body {
+        height: 64px;
+        gap: 12px;
+        justify-content: flex-start;
+    }
+
+    .header-logo__text {
+        display: none;
+    }
+
+    .header__menu {
+        display: none;
+    }
+
+    .header__search--desktop {
+        display: none;
+    }
+
+    .header__icon-btn,
+    .header__burger {
+        display: inline-flex;
+    }
+
+    .header__mobile-search-open {
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 901px) {
+    .header__drawer {
+        display: none !important;
+    }
+}
+
+body.header-drawer-open {
+    overflow: hidden;
+}
+
 .cart__badge {
     position: absolute;
     top: -10px;

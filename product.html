@@ -34,13 +34,25 @@
           </li>
         </ul>
       </nav>
-      <div class="header__search">
+      <div class="header__search header__search--desktop">
         <svg class="search__icon" fill="none" stroke="#99A1AF" stroke-width="1.67" aria-hidden="true">
           <circle cx="11" cy="11" r="8"></circle>
           <path d="m21 21-4.3-4.3"></path>
         </svg>
         <input type="search" class="search__input" placeholder="Search products..." aria-label="Search products">
       </div>
+      <button
+        type="button"
+        class="header__icon-btn header__mobile-search-open"
+        aria-label="Open menu and search"
+        aria-expanded="false"
+        aria-controls="header-mobile-drawer"
+      >
+        <svg class="header__icon-btn-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A5565" stroke-width="1.67" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+      </button>
       <div class="header__cart">
         <a href="cart.html" class="cart" aria-label="Shopping cart">
           <svg class="cart__icon" fill="none" stroke="#4A5565" stroke-width="1.67" aria-hidden="true">
@@ -50,6 +62,41 @@
           </svg>
           <span class="cart__badge" hidden aria-live="polite">0</span>
         </a>
+      </div>
+      <button
+        type="button"
+        class="header__burger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="header-mobile-drawer"
+      >
+        <span class="header__burger-line" aria-hidden="true"></span>
+        <span class="header__burger-line" aria-hidden="true"></span>
+        <span class="header__burger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div id="header-mobile-drawer" class="header__drawer" hidden>
+      <div class="header__drawer-inner container">
+        <div class="header__search header__search--drawer">
+          <svg class="search__icon" fill="none" stroke="#99A1AF" stroke-width="1.67" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            type="search"
+            class="search__input header__drawer-search-input"
+            placeholder="Search products..."
+            aria-label="Search products"
+          >
+        </div>
+        <nav class="header__drawer-nav" aria-label="Main">
+          <ul class="header__drawer-menu">
+            <li><a href="index.html" class="header__drawer-link">Products</a></li>
+            <li><a href="index.html" class="header__drawer-link">Categories</a></li>
+            <li><a href="index.html" class="header__drawer-link">Deals</a></li>
+            <li><a href="index.html" class="header__drawer-link">About</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
   </header>
