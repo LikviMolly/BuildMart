@@ -27,16 +27,15 @@
 
 .footer-top__menu-list {
    line-height: 2;
-
-
-
 }
 
 .footer-top__menu-link {
     color: var(--color-gray-300);
-   
-    
-    
+    transition: color 0.2s;
+}
+
+.footer-top__menu-link:hover {
+    color: var(--color-orange-600);
 }
 
 .footer-socials {
