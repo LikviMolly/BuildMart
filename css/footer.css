@@ -6,13 +6,20 @@
     font-weight: 400;
     line-height: 1.7;
 
-    padding: 48px 32px;
+    padding-top: 48px;
+    padding-bottom: 48px;
 }
 
 .footer__top {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
+}
+
+@media (max-width: 960px) {
+    .footer__top {
+        grid-template-columns: 1fr;
+    }
 }
 
 .footer-top__header {
@@ -66,7 +73,12 @@
     padding: 32px 0 32px 0;
     border-top: var(--color-gray-800) 1px solid;
     border-bottom: var(--color-gray-800) 1px solid;
-    
+}
+
+@media (max-width: 960px) {
+    .footer__contacts {
+        grid-template-columns: 1fr;
+    }
 }
 
 .footer__contact-header {
