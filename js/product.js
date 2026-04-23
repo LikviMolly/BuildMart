@@ -100,15 +100,21 @@
 </a>`;
   }
 
+  const RELATED_BY_PRODUCT_ID = {
+    "plywood-sheets": "premium-lumber-planks",
+    "premium-lumber-planks": "plywood-sheets",
+  };
+
   function renderRelatedProducts(product) {
     const list = document.getElementById("product-related-list");
     if (!list) return;
-    if (product.id !== "plywood-sheets") {
+    const relatedId = RELATED_BY_PRODUCT_ID[product.id];
+    if (!relatedId) {
       list.innerHTML = "";
       return;
     }
     const related = window.buildMartGetProductById
-      ? window.buildMartGetProductById("premium-lumber-planks")
+      ? window.buildMartGetProductById(relatedId)
       : null;
     if (!related) {
       list.innerHTML = "";
