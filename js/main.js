@@ -243,12 +243,20 @@
       onChange();
     });
 
-    panel.querySelectorAll('input[name="filter-rating"]').forEach((el) => {
-      el.addEventListener("change", onChange);
+    const ratingBoxes = panel.querySelectorAll('input[name="filter-rating"]');
+    ratingBoxes.forEach((el) => {
+      el.addEventListener("change", () => {
+        if (el.checked) {
+          ratingBoxes.forEach((other) => {
+            if (other !== el) other.checked = false;
+          });
+        }
+        onChange();
+      });
     });
 
     document.getElementById("filters-clear")?.addEventListener("click", () => {
-      panel.querySelectorAll('input[name="filter-rating"]').forEach((el) => {
+      ratingBoxes.forEach((el) => {
         el.checked = false;
       });
       if (minEl) minEl.value = "0";
@@ -270,11 +278,10 @@
     const filtersBtn = document.querySelector(".filters-btn");
 
     function getMinRatingFilter() {
-      const boxes = document.querySelectorAll(
+      const selected = document.querySelector(
         'input[name="filter-rating"]:checked',
       );
-      if (boxes.length === 0) return null;
-      return Math.max(...[...boxes].map((b) => Number(b.value)));
+      return selected ? Number(selected.value) : null;
     }
 
     function getPriceFilter() {
