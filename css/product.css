@@ -28,7 +28,7 @@
 
 .page-product .product-layout__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 440px);
+    grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: start;
     margin-top: 16px;
