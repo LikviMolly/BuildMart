@@ -84,6 +84,39 @@
     return html;
   }
 
+  function relatedProductCardHtml(p) {
+    const href = `product.html?id=${encodeURIComponent(p.id)}`;
+    return `
+<a class="product-related__card" href="${href}">
+  <img class="product-related__img" src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}">
+  <div class="product-related__body">
+    <p class="product-related__name">${escapeHtml(p.name)}</p>
+    <div class="product-related__rating">
+      ${ratingStarsHtml(p.rating, "product-buy")}
+      <span class="product-related__rating-num">(${formatRating(p.rating)})</span>
+    </div>
+    <p class="product-related__price">${formatPrice(p.price)}</p>
+  </div>
+</a>`;
+  }
+
+  function renderRelatedProducts(product) {
+    const list = document.getElementById("product-related-list");
+    if (!list) return;
+    if (product.id !== "plywood-sheets") {
+      list.innerHTML = "";
+      return;
+    }
+    const related = window.buildMartGetProductById
+      ? window.buildMartGetProductById("premium-lumber-planks")
+      : null;
+    if (!related) {
+      list.innerHTML = "";
+      return;
+    }
+    list.innerHTML = relatedProductCardHtml(related);
+  }
+
   const cartIconSvg = `<svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>`;
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -163,6 +196,7 @@
     const descEl = document.getElementById("product-description-text");
     if (descEl) descEl.textContent = product.description || "";
     renderProductAccordion(product);
+    renderRelatedProducts(product);
 
     let qty = 1;
     const qtyVal = document.getElementById("product-qty-value");
