@@ -52,31 +52,64 @@
         const lineTotal = line.product.price * line.qty;
         subtotal += lineTotal;
         return `
-<tr data-id="${escapeHtml(line.id)}">
-  <td>
-    <div class="cart-line__product">
-      <img class="cart-line__thumb" src="${escapeHtml(line.product.image)}" alt="">
-      <div>
-        <p class="cart-line__name">${escapeHtml(line.product.name)}</p>
-        <p class="cart-line__cat">${escapeHtml(line.product.category)}</p>
+<div class="cart-item" data-id="${escapeHtml(line.id)}">
+      <div class="cart-item__grid">
+        <!-- Product info -->
+        <div class="cart-item__product">
+          <a href="/product/${line.product.id}" class="cart-item__thumb-link">
+            <img class="cart-item__thumb" src="${escapeHtml(line.product.image)}" alt="${escapeHtml(line.product.name)}">
+          </a>
+          <div class="cart-item__info">
+            <a href="/product.html?id=${line.product.id}" class="cart-item__name">${escapeHtml(line.product.name)}</a>
+            <p class="cart-item__cat">${escapeHtml(line.product.category)}</p>
+            <!-- Кнопка удаления (только на мобильных) -->
+            <button type="button" class="cart-item__remove-mobile" data-cart-remove="${escapeHtml(line.id)}">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+                <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+              </svg>
+              Remove
+            </button>
+          </div>
+        </div>
+        
+        <!-- Price -->
+        <div class="cart-item__price">
+          <span class="cart-item__label">Price:</span>
+          <span class="cart-item__price-value">${formatPrice(line.product.price)}</span>
+        </div>
+        
+        <!-- Quantity -->
+        <div class="cart-item__qty">
+          <div class="cart-qty" role="group" aria-label="Quantity for ${escapeHtml(line.product.name)}">
+            <button type="button" data-cart-dec="${escapeHtml(line.id)}" aria-label="Decrease quantity">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/>
+              </svg>
+            </button>
+            <span>${line.qty}</span>
+            <button type="button" data-cart-inc="${escapeHtml(line.id)}" aria-label="Increase quantity">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/><path d="M12 5v14"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Total -->
+        <div class="cart-item__total">
+          <span class="cart-item__label">Total:</span>
+          <span class="cart-item__total-value">${formatPrice(lineTotal)}</span>
+          <!-- Кнопка удаления (на десктопе) -->
+          <button type="button" class="cart-item__remove-desktop" data-cart-remove="${escapeHtml(line.id)}" aria-label="Remove item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+              <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-  </td>
-  <td class="col-price">${formatPrice(line.product.price)}</td>
-  <td>
-    <div class="cart-qty" role="group" aria-label="Quantity for ${escapeHtml(line.product.name)}">
-      <button type="button" data-cart-dec="${escapeHtml(line.id)}" aria-label="Decrease quantity">−</button>
-      <span>${line.qty}</span>
-      <button type="button" data-cart-inc="${escapeHtml(line.id)}" aria-label="Increase quantity">+</button>
-    </div>
-  </td>
-  <td class="col-total">${formatPrice(lineTotal)}</td>
-  <td>
-    <button type="button" class="cart-remove" data-cart-remove="${escapeHtml(line.id)}" aria-label="Remove item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>
-    </button>
-  </td>
-</tr>`;
+    </div>`;
       })
       .join("");
 

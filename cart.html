@@ -64,18 +64,16 @@
     <div class="cart-page__layout" id="cart-page-layout">
       <div>
         <div class="cart-table-card">
-          <table class="cart-table">
-            <thead>
-              <tr>
-                <th>Product</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-                <th><span class="visually-hidden">Remove</span></th>
-              </tr>
-            </thead>
-            <tbody id="cart-lines"></tbody>
-          </table>
+          <!-- Заголовок таблицы (скрыт на мобильных) -->
+          <div class="cart-header">
+            <div class="cart-header__product">Product</div>
+            <div class="cart-header__price">Price</div>
+            <div class="cart-header__qty">Quantity</div>
+            <div class="cart-header__total">Total</div>
+          </div>
+
+          <!-- Список товаров -->
+          <div class="cart-items" id="cart-lines"></div>
         </div>
 
         <div class="cart-promo">
