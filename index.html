@@ -68,7 +68,8 @@
       <p class="main__subtitle">Premium construction supplies for all your projects</p>
     </div>
     <div class="main__filters-sort">
-      <button
+      <div class="filters">
+        <button
         type="button"
         class="filters-btn"
         aria-expanded="false"
@@ -88,6 +89,7 @@
         <span class="filters-btn__label">Show Filters</span>
       </button>
       <span class="products-count">Showing 6 products</span>
+      </div>
       <div class="sort-control">
         <label class="sort-control__label" for="sort-select">Sort by:</label>
         <select class="sort-control__select" id="sort-select">
@@ -153,10 +155,10 @@
             <span id="price-label-min">$0</span>
             <span id="price-label-max">$400</span>
           </div>
-          <div class="filters-panel__col-actions">
+        </div>
+        <div class="filters-panel__col-actions">
             <button type="button" class="filters-clear" id="filters-clear">Clear All Filters</button>
           </div>
-        </div>
       </div>
     </div>
     <div class="main__products"></div>
