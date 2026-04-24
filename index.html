@@ -1,12 +1,314 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BuildMart</title>
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/products-data.js" defer></script>
+  <script src="./js/main.js" defer></script>
 </head>
-<body>
-  <h1>BuildMart</h1>
+<body class="page-index">
+  <header class="header">
+    <div class="header__body container">
+      <a
+        class="header__logo"
+        href="index.html"
+        aria-label="Home"
+        title="Home"
+      >
+        <div class="header-logo__mark">
+          <span class="header-logo__mark-text">BM</span>
+        </div>
+        <span class="header-logo__text">BuildMart</span>
+      </a>
+      <nav class="header__menu" aria-label="Main">
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <a href="index.html" class="header__menu-link">Products</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="index.html" class="header__menu-link">Categories</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="index.html" class="header__menu-link">Deals</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="index.html" class="header__menu-link">About</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__search header__search--desktop">
+        <svg class="search__icon" fill="none" stroke="#99A1AF" stroke-width="1.67" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            type="search"
+            class="search__input"
+            placeholder="Search products..."
+            aria-label="Search products"
+          >
+      </div>
+      <button
+        type="button"
+        class="header__icon-btn header__mobile-search-open"
+        aria-label="Open menu and search"
+        aria-expanded="false"
+        aria-controls="header-mobile-drawer"
+      >
+        <svg class="header__icon-btn-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A5565" stroke-width="1.67" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+      </button>
+      <div class="header__cart">
+        <a href="cart.html" class="cart" aria-label="Shopping cart">
+          <svg class="cart__icon" fill="none" stroke="#4A5565" stroke-width="1.67" aria-hidden="true">
+          <circle cx="8" cy="21" r="1"></circle>
+          <circle cx="19" cy="21" r="1"></circle>
+          <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+        </svg>
+        <span class="cart__badge" hidden aria-live="polite">0</span>
+        </a>
+      </div>
+      <button
+        type="button"
+        class="header__burger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="header-mobile-drawer"
+      >
+        <span class="header__burger-line" aria-hidden="true"></span>
+        <span class="header__burger-line" aria-hidden="true"></span>
+        <span class="header__burger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div id="header-mobile-drawer" class="header__drawer" hidden>
+      <div class="header__drawer-inner container">
+        <div class="header__search header__search--drawer">
+          <svg class="search__icon" fill="none" stroke="#99A1AF" stroke-width="1.67" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            type="search"
+            class="search__input header__drawer-search-input"
+            placeholder="Search products..."
+            aria-label="Search products"
+          >
+        </div>
+        <nav class="header__drawer-nav" aria-label="Main">
+          <ul class="header__drawer-menu">
+            <li><a href="index.html" class="header__drawer-link">Products</a></li>
+            <li><a href="index.html" class="header__drawer-link">Categories</a></li>
+            <li><a href="index.html" class="header__drawer-link">Deals</a></li>
+            <li><a href="index.html" class="header__drawer-link">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <div class="main__header">
+      <h1 class="main__title">Building Materials</h1>
+      <p class="main__subtitle">Premium construction supplies for all your projects</p>
+    </div>
+    <div class="main__filters-sort">
+      <div class="filters">
+        <button
+        type="button"
+        class="filters-btn"
+        aria-expanded="false"
+        aria-controls="filters-panel"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="3" x2="10" y1="20" y2="20"></line>
+          <line x1="14" x2="21" y1="20" y2="20"></line>
+          <line x1="3" x2="12" y1="12" y2="12"></line>
+          <line x1="16" x2="21" y1="12" y2="12"></line>
+          <line x1="3" x2="8" y1="4" y2="4"></line>
+          <line x1="12" x2="21" y1="4" y2="4"></line>
+          <line x1="10" x2="10" y1="18" y2="22"></line>
+          <line x1="16" x2="16" y1="10" y2="14"></line>
+          <line x1="8" x2="8" y1="2" y2="6"></line>
+        </svg>
+        <span class="filters-btn__label">Show Filters</span>
+      </button>
+      <span class="products-count">Showing 6 products</span>
+      </div>
+      <div class="sort-control">
+        <label class="sort-control__label" for="sort-select">Sort by:</label>
+        <select class="sort-control__select" id="sort-select">
+          <option value="name-asc">Name (A-Z)</option>
+          <option value="price-asc">Price (Low to High)</option>
+          <option value="price-desc">Price (High to Low)</option>
+        </select>
+      </div>
+    </div>
+    <div
+      id="filters-panel"
+      class="filters-panel"
+      role="region"
+      aria-label="Product filters"
+      hidden
+    >
+      <div class="filters-panel__grid">
+        <div class="filters-panel__col">
+          <h2 class="filters-panel__heading">Minimum Rating</h2>
+          <div class="filters-rating">
+            <label class="filters-rating__item">
+              <input type="checkbox" name="filter-rating" value="5" class="filters-rating__input">
+              <span>5+ Stars</span>
+            </label>
+            <label class="filters-rating__item">
+              <input type="checkbox" name="filter-rating" value="4" class="filters-rating__input">
+              <span>4+ Stars</span>
+            </label>
+            <label class="filters-rating__item">
+              <input type="checkbox" name="filter-rating" value="3" class="filters-rating__input">
+              <span>3+ Stars</span>
+            </label>
+          </div>
+        </div>
+        <div class="filters-panel__col filters-panel__col--price">
+          <h2 class="filters-panel__heading">Price Range</h2>
+          <div class="price-range" id="price-range">
+            <div class="price-range__rail" aria-hidden="true">
+              <span class="price-range__interval" id="price-range-interval"></span>
+            </div>
+            <input
+              type="range"
+              class="price-range__input price-range__input--min"
+              id="filter-price-min"
+              min="0"
+              max="400"
+              value="0"
+              step="1"
+              aria-label="Minimum price"
+            >
+            <input
+              type="range"
+              class="price-range__input price-range__input--max"
+              id="filter-price-max"
+              min="0"
+              max="400"
+              value="400"
+              step="1"
+              aria-label="Maximum price"
+            >
+          </div>
+          <div class="price-range__labels">
+            <span id="price-label-min">$0</span>
+            <span id="price-label-max">$400</span>
+          </div>
+        </div>
+        <div class="filters-panel__col-actions">
+            <button type="button" class="filters-clear" id="filters-clear">Clear All Filters</button>
+          </div>
+      </div>
+    </div>
+    <div class="main__products"></div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer-top__socials">
+          <p class="footer-top__header">BuildMart</p>
+          <p>Your trusted source for premium building materials and construction supplies since 1995.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-socials__link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-socials__link" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+              </svg>
+            </a>
+            <a href="#" class="footer-socials__link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="footer-socials__link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-top__menu">
+          <p class="footer-top__header">Quick Links</p>
+          <ul class="footer-top__menu-list">
+            <li class="footer-top__menu-item">
+              <a href="index.html" class="footer-top__menu-link">About Us</a>
+            </li>
+            <li class="footer-top__menu-item">
+              <a href="index.html" class="footer-top__menu-link">Products</a>
+            </li>
+            <li class="footer-top__menu-item">
+              <a href="index.html" class="footer-top__menu-link">Delivery Info</a>
+            </li>
+            <li class="footer-top__menu-item">
+              <a href="index.html" class="footer-top__menu-link">Returns Policy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-top__menu">
+          <p class="footer-top__header">Customer Service</p>
+          <ul class="footer-top__menu-list">
+            <li class="footer-top__menu-item">
+              <a href="index.html" class="footer-top__menu-link">Contact Us</a>
+            </li>
+            <li class="footer-top__menu-item">
+              <a href="index.html" class="footer-top__menu-link">FAQs</a>
+            </li>
+            <li class="footer-top__menu-item">
+              <a href="index.html" class="footer-top__menu-link">Shipping & Tracking</a>
+            </li>
+            <li class="footer-top__menu-item">
+              <a href="index.html" class="footer-top__menu-link">Privacy Policy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-top__subscription">
+          <p class="footer-top__header">Newsletter</p>
+          <p>Subscribe for updates and exclusive deals.</p>
+          <form action="" class="subscription_form">
+            <input type="text" placeholder="Your Email" class="subscription-form__input">
+              <button type="submit" class="subscription-form__btn" aria-label="Subscribe">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail">
+                      <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+              </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__contact">
+          <p class="footer__contact-header">Phone</p>
+          <p>1-800-BUILD-MART</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-header">Email</p>
+          <p>support@buildmart.com</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-header">Address</p>
+          <p>123 Construction Ave, Builder City, BC 12345</p>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2026 BuildMart. All rights reserved.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

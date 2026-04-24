@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — BuildMart</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/products-data.js" defer></script>
+  <script src="./js/main.js" defer></script>
+  <script src="./js/product.js" defer></script>
+</head>
+<body class="page-product">
+  <header class="header">
+    <div class="header__body container">
+      <a class="header__logo" href="index.html" aria-label="Home" title="Home">
+        <div class="header-logo__mark">
+          <span class="header-logo__mark-text">BM</span>
+        </div>
+        <span class="header-logo__text">BuildMart</span>
+      </a>
+      <nav class="header__menu" aria-label="Main">
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <a href="index.html" class="header__menu-link">Products</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="index.html" class="header__menu-link">Categories</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="index.html" class="header__menu-link">Deals</a>
+          </li>
+          <li class="header__menu-item">
+            <a href="index.html" class="header__menu-link">About</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__search header__search--desktop">
+        <svg class="search__icon" fill="none" stroke="#99A1AF" stroke-width="1.67" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input type="search" class="search__input" placeholder="Search products..." aria-label="Search products">
+      </div>
+      <button
+        type="button"
+        class="header__icon-btn header__mobile-search-open"
+        aria-label="Open menu and search"
+        aria-expanded="false"
+        aria-controls="header-mobile-drawer"
+      >
+        <svg class="header__icon-btn-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4A5565" stroke-width="1.67" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+      </button>
+      <div class="header__cart">
+        <a href="cart.html" class="cart" aria-label="Shopping cart">
+          <svg class="cart__icon" fill="none" stroke="#4A5565" stroke-width="1.67" aria-hidden="true">
+            <circle cx="8" cy="21" r="1"></circle>
+            <circle cx="19" cy="21" r="1"></circle>
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path>
+          </svg>
+          <span class="cart__badge" hidden aria-live="polite">0</span>
+        </a>
+      </div>
+      <button
+        type="button"
+        class="header__burger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="header-mobile-drawer"
+      >
+        <span class="header__burger-line" aria-hidden="true"></span>
+        <span class="header__burger-line" aria-hidden="true"></span>
+        <span class="header__burger-line" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div id="header-mobile-drawer" class="header__drawer" hidden>
+      <div class="header__drawer-inner container">
+        <div class="header__search header__search--drawer">
+          <svg class="search__icon" fill="none" stroke="#99A1AF" stroke-width="1.67" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            type="search"
+            class="search__input header__drawer-search-input"
+            placeholder="Search products..."
+            aria-label="Search products"
+          >
+        </div>
+        <nav class="header__drawer-nav" aria-label="Main">
+          <ul class="header__drawer-menu">
+            <li><a href="index.html" class="header__drawer-link">Products</a></li>
+            <li><a href="index.html" class="header__drawer-link">Categories</a></li>
+            <li><a href="index.html" class="header__drawer-link">Deals</a></li>
+            <li><a href="index.html" class="header__drawer-link">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container product-layout">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Products</a>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__current" id="breadcrumb-current"></span>
+    </nav>
+
+    <div class="product-layout__grid">
+      <div>
+        <div class="product-gallery__main">
+          <img id="product-main-img" src="" alt="">
+          <button type="button" class="product-gallery__nav product-gallery__nav--prev" id="gallery-prev" aria-label="Previous image">‹</button>
+          <button type="button" class="product-gallery__nav product-gallery__nav--next" id="gallery-next" aria-label="Next image">›</button>
+        </div>
+        <div class="product-gallery__thumbs" id="gallery-thumbs"></div>
+      </div>
+
+      <div class="product-buy">
+        <h1 class="product-buy__title" id="product-title"></h1>
+        <div class="product-buy__rating" id="product-rating-row"></div>
+        <p class="product-buy__price" id="product-price"></p>
+
+        <div class="product-usps">
+          <div class="product-usp">
+            <div class="product-usp__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg>
+            </div>
+            <div>
+              <p class="product-usp__title">Quality Assured</p>
+              <p class="product-usp__text">Premium grade material.</p>
+            </div>
+          </div>
+          <div class="product-usp">
+            <div class="product-usp__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9"/><path d="M14 17h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+            </div>
+            <div>
+              <p class="product-usp__title">Fast Delivery</p>
+              <p class="product-usp__text">2–5 business days.</p>
+            </div>
+          </div>
+          <div class="product-usp">
+            <div class="product-usp__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <p class="product-usp__title">Warranty</p>
+              <p class="product-usp__text">30-day guarantee.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-qty">
+          <span class="product-qty__label">Quantity</span>
+          <div class="product-qty__row">
+            <button type="button" class="product-qty__btn" id="product-qty-minus" aria-label="Decrease quantity">−</button>
+            <span class="product-qty__value" id="product-qty-value">1</span>
+            <button type="button" class="product-qty__btn" id="product-qty-plus" aria-label="Increase quantity">+</button>
+          </div>
+        </div>
+
+        <div class="product-buy__actions">
+          <button type="button" class="btn btn--primary btn--block" id="product-add-cart">
+            <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            Add to Cart
+          </button>
+          <button type="button" class="btn btn--outline--border btn--block" id="product-buy-now">Buy Now</button>
+        </div>
+
+        <section class="product-section" aria-labelledby="desc-heading">
+          <h2 id="desc-heading">Description</h2>
+          <p id="product-description-text"></p>
+        </section>
+
+        <section class="product-accordion" id="product-accordion" aria-label="Technical Specifications"></section>
+      </div>
+    </div>
+
+    <section class="product-related product-section" aria-labelledby="related-heading">
+      <h2 id="related-heading">Related Products</h2>
+      <div id="product-related-list" class="product-related__list"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer-top__socials">
+          <p class="footer-top__header">BuildMart</p>
+          <p>Your trusted source for premium building materials and construction supplies since 1995.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-socials__link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="footer-socials__link" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+            </a>
+            <a href="#" class="footer-socials__link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+            </a>
+            <a href="#" class="footer-socials__link" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-top__menu">
+          <p class="footer-top__header">Quick Links</p>
+          <ul class="footer-top__menu-list">
+            <li class="footer-top__menu-item"><a href="index.html" class="footer-top__menu-link">About Us</a></li>
+            <li class="footer-top__menu-item"><a href="index.html" class="footer-top__menu-link">Products</a></li>
+            <li class="footer-top__menu-item"><a href="index.html" class="footer-top__menu-link">Delivery Info</a></li>
+            <li class="footer-top__menu-item"><a href="index.html" class="footer-top__menu-link">Returns Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-top__menu">
+          <p class="footer-top__header">Customer Service</p>
+          <ul class="footer-top__menu-list">
+            <li class="footer-top__menu-item"><a href="index.html" class="footer-top__menu-link">Contact Us</a></li>
+            <li class="footer-top__menu-item"><a href="index.html" class="footer-top__menu-link">FAQs</a></li>
+            <li class="footer-top__menu-item"><a href="index.html" class="footer-top__menu-link">Shipping & Tracking</a></li>
+            <li class="footer-top__menu-item"><a href="index.html" class="footer-top__menu-link">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-top__subscription">
+          <p class="footer-top__header">Newsletter</p>
+          <p>Subscribe for updates and exclusive deals.</p>
+          <form action="" class="subscription_form">
+            <input type="text" placeholder="Your Email" class="subscription-form__input">
+            <button type="submit" class="subscription-form__btn" aria-label="Subscribe">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__contacts">
+        <div class="footer__contact">
+          <p class="footer__contact-header">Phone</p>
+          <p>1-800-BUILD-MART</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-header">Email</p>
+          <p>support@buildmart.com</p>
+        </div>
+        <div class="footer__contact">
+          <p class="footer__contact-header">Address</p>
+          <p>123 Construction Ave, Builder City, BC 12345</p>
+        </div>
+      </div>
+      <div class="copyright">© 2026 BuildMart. All rights reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
