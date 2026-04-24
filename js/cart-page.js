@@ -204,7 +204,7 @@
     
     if (applyBtn) {
       applyBtn.addEventListener('click', function() {
-        const code = promoInput.value.trim();
+        const code = promoInput.value.trim().toUpperCase();
         
         if (code === 'BUILD10') {
           const cart = window.buildMartGetCart ? window.buildMartGetCart() : [];
