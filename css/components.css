@@ -91,3 +91,7 @@ main {
 .btn__icon {
     flex-shrink: 0;
 }
+
+[hidden] {
+  display: none !important;
+}
