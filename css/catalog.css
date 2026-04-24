@@ -332,7 +332,7 @@
     padding-bottom: 64px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1024px) {
     .main__products {
         grid-template-columns: repeat(2, 1fr);
     }
