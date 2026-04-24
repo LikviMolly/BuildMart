@@ -136,9 +136,9 @@
     align-items: flex-end;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .filters-panel__grid {
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .main__filters-sort {
