@@ -438,7 +438,7 @@
 }
 
 .product-card__star--half {
-    background: linear-gradient(90deg, var(--color-yellow) 50%, #e5e7eb 50%);
+    background: linear-gradient(90deg, var(--color-yellow-400) 50%, var(--color-gray-200) 50%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
