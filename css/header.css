@@ -1,4 +1,8 @@
 .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-white);
     border-bottom: #E5E7EB 1px solid;
 }
 
@@ -239,9 +243,9 @@
     }
 }
 
-body.header-drawer-open {
+/* body.header-drawer-open {
     overflow: hidden;
-}
+} */
 
 .cart__badge {
     position: absolute;
