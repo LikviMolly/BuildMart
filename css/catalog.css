@@ -142,8 +142,8 @@
     }
 
     .main__filters-sort {
-        grid-template-columns: 1fr;
-        justify-items: stretch;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .main__filters-sort .filters-btn,
