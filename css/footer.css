@@ -16,7 +16,13 @@
     gap: 2rem;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
+    .footer__top {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
     .footer__top {
         grid-template-columns: 1fr;
     }
@@ -75,7 +81,7 @@
     border-bottom: var(--color-gray-800) 1px solid;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 768px) {
     .footer__contacts {
         grid-template-columns: 1fr;
     }
