@@ -341,6 +341,20 @@
     color: var(--color-gray-900);
 }
 
+.page-product .product-accordion__panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease-out;
+}
+
+.page-product .product-accordion__panel > div {
+    overflow: hidden;
+}
+
+.page-product .product-accordion__item.is-open .product-accordion__panel {
+    grid-template-rows: 1fr;
+}
+
 .page-product .product-section {
     margin-top: 48px;
     max-width: 800px;

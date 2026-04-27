@@ -41,7 +41,7 @@
       .map((block, i) => {
         const panelId = `product-accordion-panel-${i}`;
         const buttonId = `product-accordion-trigger-${i}`;
-        const open = i === 0;
+        const open = i === 1;
         return `
 <div class="product-accordion__item${open ? " is-open" : ""}">
   <h3 class="product-accordion__head">
@@ -50,9 +50,11 @@
       <span class="product-accordion__chev" aria-hidden="true">⌄</span>
     </button>
   </h3>
-  <div class="product-accordion__panel" id="${panelId}" role="region" aria-labelledby="${buttonId}" ${open ? "" : "hidden"}>
-    <div class="product-accordion__body">
-      ${specsGridHtml(block.items)}
+  <div class="product-accordion__panel" id="${panelId}" role="region" aria-labelledby="${buttonId}">
+    <div>
+      <div class="product-accordion__body">
+        ${specsGridHtml(block.items)}
+      </div>
     </div>
   </div>
 </div>`;
@@ -63,12 +65,11 @@
       const trigger = e.target.closest(".product-accordion__trigger");
       if (!trigger || !root.contains(trigger)) return;
       const item = trigger.closest(".product-accordion__item");
-      const panel = item?.querySelector(".product-accordion__panel");
-      if (!item || !panel) return;
+      if (!item) return;
+      
       const opened = item.classList.contains("is-open");
       item.classList.toggle("is-open", !opened);
       trigger.setAttribute("aria-expanded", opened ? "false" : "true");
-      panel.hidden = opened;
     });
   }
 
