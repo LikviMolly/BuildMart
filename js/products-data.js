@@ -6,11 +6,11 @@ window.BUILDMART_PRODUCTS = [
     price: 45.99,
     category: "Paint & Coatings",
     image:
-      "https://images.unsplash.com/photo-1589939705384-5185130a7f0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1673297821205-e0575bbc2ab7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1589939705384-5185130a7f0c?w=800&q=80",
-      "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=800&q=80",
-      "https://images.unsplash.com/photo-1494389544920-244904cb185a?w=800&q=80",
+      "https://images.unsplash.com/photo-1673297821205-e0575bbc2ab7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1673297821205-e0575bbc2ab7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1673297821205-e0575bbc2ab7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     ],
     description:
       "Professional-grade exterior paint formulated for durability and weather resistance. Ideal for residential and commercial facades, this set includes primer-compatible topcoat with excellent coverage and a smooth finish that lasts for years.",
@@ -35,11 +35,11 @@ window.BUILDMART_PRODUCTS = [
     price: 52.99,
     category: "Wood & Lumber",
     image:
-      "https://images.unsplash.com/photo-1541123603104-512fce293344?w=800&q=80",
+      "https://images.unsplash.com/photo-1704167674713-649193461719?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1541123603104-512fce293344?w=800&q=80",
-      "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&q=80",
-      "https://images.unsplash.com/photo-1589939705384-5185130a7f0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1704167674713-649193461719?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1704167674713-649193461719?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1704167674713-649193461719?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     ],
     description:
       "High-quality structural plywood sheets, sanded smooth for cabinetry and construction. Suitable for interior and protected exterior applications.",
@@ -64,11 +64,11 @@ window.BUILDMART_PRODUCTS = [
     price: 24.99,
     category: "Cement & Concrete",
     image:
-      "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?w=800&q=80",
+      "https://images.unsplash.com/photo-1718117075248-3d3c3cd65264?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?w=800&q=80",
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
-      "https://images.unsplash.com/photo-1541123603104-512fce293344?w=800&q=80",
+      "https://images.unsplash.com/photo-1718117075248-3d3c3cd65264?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1718117075248-3d3c3cd65264?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1718117075248-3d3c3cd65264?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     ],
     description:
       "Type I Portland cement blend for foundations, slabs, and repairs. Consistent setting time and high compressive strength.",
@@ -93,11 +93,11 @@ window.BUILDMART_PRODUCTS = [
     price: 89.99,
     category: "Wood & Lumber",
     image:
-      "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&q=80",
+      "https://images.unsplash.com/photo-1764025390519-1ccc15d719a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=800&q=80",
-      "https://images.unsplash.com/photo-1541123603104-512fce293344?w=800&q=80",
-      "https://images.unsplash.com/photo-1589939705384-5185130a7f0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1764025390519-1ccc15d719a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1764025390519-1ccc15d719a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1764025390519-1ccc15d719a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     ],
     description:
       "Kiln-dried premium planks, straight-grained and ready for finishing. Perfect for decking, framing, and visible woodwork.",
@@ -122,11 +122,11 @@ window.BUILDMART_PRODUCTS = [
     price: 0.89,
     category: "Bricks & Blocks",
     image:
-      "https://images.unsplash.com/photo-1595846517345-68e3e368ccb8?w=800&q=80",
+      "https://images.unsplash.com/photo-1761358270922-5a4df4ab9782?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1595846517345-68e3e368ccb8?w=800&q=80",
-      "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?w=800&q=80",
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+      "https://images.unsplash.com/photo-1761358270922-5a4df4ab9782?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1761358270922-5a4df4ab9782?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1761358270922-5a4df4ab9782?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     ],
     description:
       "Classic red clay bricks fired for strength and color retention. Sold per unit for small repairs or sample orders.",
@@ -151,11 +151,11 @@ window.BUILDMART_PRODUCTS = [
     price: 349.99,
     category: "Steel & Metal",
     image:
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
+      "https://images.unsplash.com/photo-1707236527163-bd3478178466?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     gallery: [
-      "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80",
-      "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?w=800&q=80",
-      "https://images.unsplash.com/photo-1595846517345-68e3e368ccb8?w=800&q=80",
+      "https://images.unsplash.com/photo-1707236527163-bd3478178466?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1707236527163-bd3478178466?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
+      "https://images.unsplash.com/photo-1707236527163-bd3478178466?crop=entropy&cs=tinysrgb&fit=max&fm=jpg",
     ],
     description:
       "Structural steel I-beams for load-bearing applications. Mill-certified and ready for engineering review.",
